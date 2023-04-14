@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ARC Virtual Tour</title>
+  <meta name="description" content="ARC Virtual Tour">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+  <script src="/scripts/components/aframe-rounded-component.min.js"></script>
+
+  <script id="display-name" type="text/html">
+    <a-rounded radius="0.03" color="#144616" height="${height}" width="${width}" position="${position}" rotation="${rotation}">
+      <a-text value="${text}" width="${width}" height="height" align="center" color="#fff" position="${width / 2} ${height / 2} 0"
+        wrap-count="${wrap_count}" ></a-text>
+    </a-rounded>
+  </script>
+
+  <script type="module" src="scripts/index.js"></script>
+</head>
+
+<body>
+  <button id="open-qa"><img src="./assets/images/map.svg" alt=""></button>
+  <button id="close-qa" class="hidden"><img src="./assets/images/x.svg" alt=""></button>
+  <button id="open-rd" class="hide"><img
+      src="https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/alert-circle.svg?alt=media&token=b755ec8f-a8e2-4fdb-9b65-ebd4841ab600"
+      alt=""></button>
+
+  <div id="quick-access-locations" class="hide">
+  </div>
+
+  <div id="languages" class="">
+    <button language="en" class="lang-opt">EN</button>
+    <button language="id" class="lang-opt">ID</button>
+
+    <button id="show-opt">EN</button>
+  </div>
+
+  <a-scene raycaster="far: 100; objects: .clickable" cursor="rayOrigin: mouse" renderer="antialias: true"
+    loading-screen="dotsColor: red; backgroundColor: black">
+    <a-assets>
+      <img id="hotspot" crossorigin="anonymous"
+        src="https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/placeholder.png?alt=media&token=36246252-4839-479c-99b2-6d0478ff8e7a">
+      <img id="radio-button" crossorigin="anonymous"
+        src="https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/radio-button.png?alt=media&token=2aec39cf-7d87-48e0-9f51-4d71ee67b8d5">
+      <img id="enter-icon" crossorigin="anonymous"
+        src="https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/enter-door.png?alt=media&token=3cad96aa-e346-47af-9082-7cce963761d3">
+      <img id="exit-icon" crossorigin="anonymous"
+        src="https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/exit-door.png?alt=media&token=4a3d42e6-258e-4b1a-b3dd-06c6ce402c0f">
+      <img id="map-icon" crossorigin="anonymous"
+        src="https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/map.svg?alt=media&token=8bce1a0f-6148-4e54-a48f-3208e51ca3d8">
+      <img id="x-icon" crossorigin="anonymous"
+        src="https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/x.svg?alt=media&token=dcab4c99-bcdf-4915-b054-8ea135764b42">
+
+      <a-mixin id="scale-animation" scale="1 1 1"
+        animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 300; easing: easeOutElastic; startEvents: mouseenter"
+        animation__scale_reverse="property: scale; to: 1 1 1; dur: 300; easing: easeOutElastic; startEvents: mouseleave"></a-mixin>
+    </a-assets>
+
+    <a-entity id="camera" camera look-controls>
+    </a-entity>
+
+    <a-entity id="tour" tour></a-entity>
+
+    <a-sky id="mask" color="#111" opacity="0" radius="1"
+      animation__fadeout="property:material.opacity; startEvents: fadeout; from: 0; to: 1; dur: 200"
+      animation__fadein="property:material.opacity; startEvents: fadein; from: 1; to: 0; dur: 200">
+    </a-sky>
+  </a-scene>
+
+  <div id="modal" class="hide">
+    <div class="container">
+      <button class="close"><img src="assets/images/x.svg" alt=""></button>
+
+      <div class="head">
+      </div>
+      <div class="body">
+      </div>
+    </div>
+  </div>
+
+  <div class="anim-contain leaf-anim">
+    <div class="leaf-path">
+      <div class="leaf"></div>
+    </div>
+    <div class="leaf-path">
+      <div class="leaf"></div>
+    </div>
+    <div class="leaf-path">
+      <div class="leaf"></div>
+    </div>
+    <div class="leaf-path">
+      <div class="leaf"></div>
+    </div>
+    <div class="leaf-path">
+      <div class="leaf"></div>
+    </div>
+    <div class="leaf-path">
+      <div class="leaf"></div>
+    </div>
+  </div>
+</body>
+
+</html>

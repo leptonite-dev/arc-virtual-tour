@@ -326,7 +326,7 @@ function initQuickAccess() {
 
     imgEl.setAttribute(
       "src",
-      "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/map-pin.svg?alt=media&token=2dfef2b8-0ec3-4dec-936a-4db3a7e22bb7"
+      "/assets/images/map-pin.svg"
     );
     listItemEl.appendChild(imgEl);
 
@@ -386,7 +386,7 @@ languageSetting();
 /* Tour Component */
 const locations = {
   a: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/a.JPG?alt=media&token=ce27ce82-f4b0-47ab-ae35-18b085de1607",
+    sky: "/assets/images/a.JPG",
     hotspots: [
       {
         destination: "b",
@@ -418,7 +418,7 @@ const locations = {
     ],
   },
   b: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/b.JPG?alt=media&token=2293c391-6422-4377-9ce6-07e9ffb3b8b2",
+    sky: "/assets/images/b.JPG",
     hotspots: [
       {
         destination: "a",
@@ -445,7 +445,7 @@ const locations = {
     ],
   },
   c: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/c.JPG?alt=media&token=b3af727b-61d9-401a-8dc7-1ccc20bcd4f3",
+    sky: "/assets/images/c.JPG",
     hotspots: [
       {
         destination: "a",
@@ -466,7 +466,7 @@ const locations = {
     ],
   },
   d: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/d.JPG?alt=media&token=db782897-0519-4469-aa3e-3e51e2e31a98",
+    sky: "/assets/images/d.JPG",
     hotspots: [
       {
         destination: "b",
@@ -487,7 +487,7 @@ const locations = {
     ],
   },
   e: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/e.JPG?alt=media&token=382eea53-218f-4717-b3fb-008c74cdb02b",
+    sky: "/assets/images/e.JPG",
     hotspots: [
       {
         destination: "c",
@@ -508,7 +508,7 @@ const locations = {
     ],
   },
   h: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/h.JPG?alt=media&token=d9a2bbc2-e254-413a-8b63-ac7e0ea947b3",
+    sky: "/assets/images/h.JPG",
     hotspots: [
       {
         destination: "d",
@@ -531,7 +531,7 @@ const locations = {
     ],
   },
   i: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/i.JPG?alt=media&token=37c78a28-5832-4a12-984e-aec23eee5a43",
+    sky: "/assets/images/i.JPG",
     hotspots: [
       {
         destination: "h",
@@ -572,7 +572,7 @@ const locations = {
     ],
   },
   j: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/j.JPG?alt=media&token=3dbd3e27-64fa-446c-9de1-0ddcba3ceb05",
+    sky: "/assets/images/j.JPG",
     hotspots: [
       {
         destination: "i",
@@ -590,7 +590,7 @@ const locations = {
     },
   },
   k: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/k.JPG?alt=media&token=ddaed135-2421-4adc-9d61-a9e8787cb99b",
+    sky: "/assets/images/k.JPG",
     hotspots: [
       {
         destination: "i",
@@ -611,7 +611,7 @@ const locations = {
     ],
   },
   l: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/l.JPG?alt=media&token=9fe442d7-228a-42be-a2d7-875c614546b1",
+    sky: "/assets/images/l.JPG",
     hotspots: [
       {
         destination: "k",
@@ -646,7 +646,7 @@ const locations = {
     ],
   },
   m: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/m.JPG?alt=media&token=835686b2-3f06-4235-acc1-a45384da08d2",
+    sky: "/assets/images/m.JPG",
     hotspots: [
       {
         destination: "l",
@@ -664,7 +664,7 @@ const locations = {
     },
   },
   n: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/n.JPG?alt=media&token=482c8017-ac39-4b89-a553-8010ac0df8c0",
+    sky: "/assets/images/n.JPG",
     hotspots: [
       {
         destination: "a",
@@ -701,7 +701,7 @@ const locations = {
     ],
   },
   o: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/o.JPG?alt=media&token=7d6428aa-d843-47b9-b503-6168ebb9f0e6",
+    sky: "/assets/images/o.JPG",
     hotspots: [
       {
         destination: "n",
@@ -716,7 +716,7 @@ const locations = {
     ],
   },
   p: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/p.JPG?alt=media&token=231a5ec3-c6f1-4283-8c9e-9ba6ddb52d0f",
+    sky: "/assets/images/p.JPG",
     hotspots: [
       {
         destination: "d",
@@ -783,7 +783,7 @@ const locations = {
     ],
   },
   q: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/q.JPG?alt=media&token=e2d2c162-a262-4cf1-878a-137259999b11",
+    sky: "/assets/images/q.JPG",
     hotspots: [
       {
         destination: "p",
@@ -804,7 +804,7 @@ const locations = {
     ],
   },
   r: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/r.JPG?alt=media&token=6a51c9be-fc95-4aca-8f58-0c7a303228f4",
+    sky: "/assets/images/r.JPG",
     hotspots: [
       {
         destination: "q",
@@ -822,7 +822,7 @@ const locations = {
     },
   },
   s1: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/s1.JPG?alt=media&token=e858bb0b-8e20-467f-a718-9ee7b6da8e3d",
+    sky: "/assets/images/s1.JPG",
     hotspots: [
       {
         destination: "p",
@@ -847,7 +847,7 @@ const locations = {
     ],
   },
   s2: {
-    sky: "https://firebasestorage.googleapis.com/v0/b/arc-usk.appspot.com/o/s2.JPG?alt=media&token=698a8e58-08b7-4f31-b90f-ab18fef934d8",
+    sky: "/assets/images/s2.JPG",
     hotspots: [
       {
         destination: "s1",

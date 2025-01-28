@@ -326,7 +326,7 @@ function initQuickAccess() {
 
     imgEl.setAttribute(
       "src",
-      "/assets/images/map-pin.svg"
+      "./assets/images/map-pin.svg"
     );
     listItemEl.appendChild(imgEl);
 
@@ -386,7 +386,7 @@ languageSetting();
 /* Tour Component */
 const locations = {
   a: {
-    sky: "/assets/images/a.JPG",
+    sky: "./assets/images/a.JPG",
     hotspots: [
       {
         destination: "b",
@@ -418,7 +418,7 @@ const locations = {
     ],
   },
   b: {
-    sky: "/assets/images/b.JPG",
+    sky: "./assets/images/b.JPG",
     hotspots: [
       {
         destination: "a",
@@ -445,7 +445,7 @@ const locations = {
     ],
   },
   c: {
-    sky: "/assets/images/c.JPG",
+    sky: "./assets/images/c.JPG",
     hotspots: [
       {
         destination: "a",
@@ -466,7 +466,7 @@ const locations = {
     ],
   },
   d: {
-    sky: "/assets/images/d.JPG",
+    sky: "./assets/images/d.JPG",
     hotspots: [
       {
         destination: "b",
@@ -487,7 +487,7 @@ const locations = {
     ],
   },
   e: {
-    sky: "/assets/images/e.JPG",
+    sky: "./assets/images/e.JPG",
     hotspots: [
       {
         destination: "c",
@@ -508,7 +508,7 @@ const locations = {
     ],
   },
   h: {
-    sky: "/assets/images/h.JPG",
+    sky: "./assets/images/h.JPG",
     hotspots: [
       {
         destination: "d",
@@ -531,7 +531,7 @@ const locations = {
     ],
   },
   i: {
-    sky: "/assets/images/i.JPG",
+    sky: "./assets/images/i.JPG",
     hotspots: [
       {
         destination: "h",
@@ -572,7 +572,7 @@ const locations = {
     ],
   },
   j: {
-    sky: "/assets/images/j.JPG",
+    sky: "./assets/images/j.JPG",
     hotspots: [
       {
         destination: "i",
@@ -590,7 +590,7 @@ const locations = {
     },
   },
   k: {
-    sky: "/assets/images/k.JPG",
+    sky: "./assets/images/k.JPG",
     hotspots: [
       {
         destination: "i",
@@ -611,7 +611,7 @@ const locations = {
     ],
   },
   l: {
-    sky: "/assets/images/l.JPG",
+    sky: "./assets/images/l.JPG",
     hotspots: [
       {
         destination: "k",
@@ -646,7 +646,7 @@ const locations = {
     ],
   },
   m: {
-    sky: "/assets/images/m.JPG",
+    sky: "./assets/images/m.JPG",
     hotspots: [
       {
         destination: "l",
@@ -664,7 +664,7 @@ const locations = {
     },
   },
   n: {
-    sky: "/assets/images/n.JPG",
+    sky: "./assets/images/n.JPG",
     hotspots: [
       {
         destination: "a",
@@ -701,7 +701,7 @@ const locations = {
     ],
   },
   o: {
-    sky: "/assets/images/o.JPG",
+    sky: "./assets/images/o.JPG",
     hotspots: [
       {
         destination: "n",
@@ -716,7 +716,7 @@ const locations = {
     ],
   },
   p: {
-    sky: "/assets/images/p.JPG",
+    sky: "./assets/images/p.JPG",
     hotspots: [
       {
         destination: "d",
@@ -783,7 +783,7 @@ const locations = {
     ],
   },
   q: {
-    sky: "/assets/images/q.JPG",
+    sky: "./assets/images/q.JPG",
     hotspots: [
       {
         destination: "p",
@@ -804,7 +804,7 @@ const locations = {
     ],
   },
   r: {
-    sky: "/assets/images/r.JPG",
+    sky: "./assets/images/r.JPG",
     hotspots: [
       {
         destination: "q",
@@ -822,7 +822,7 @@ const locations = {
     },
   },
   s1: {
-    sky: "/assets/images/s1.JPG",
+    sky: "./assets/images/s1.JPG",
     hotspots: [
       {
         destination: "p",
@@ -847,7 +847,7 @@ const locations = {
     ],
   },
   s2: {
-    sky: "/assets/images/s2.JPG",
+    sky: "./assets/images/s2.JPG",
     hotspots: [
       {
         destination: "s1",

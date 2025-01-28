@@ -16,7 +16,7 @@
   <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
-  <script src="/scripts/components/aframe-rounded-component.min.js"></script>
+  <script src="./scripts/components/aframe-rounded-component.min.js"></script>
 
   <script id="display-name" type="text/html">
     <a-rounded radius="0.03" color="#144616" height="${height}" width="${width}" position="${position}" rotation="${rotation}">
@@ -32,7 +32,7 @@
   <button id="open-qa"><img src="./assets/images/map.svg" alt=""></button>
   <button id="close-qa" class="hidden"><img src="./assets/images/x.svg" alt=""></button>
   <button id="open-rd" class="hide"><img
-      src="/assets/images/alert-circle.svg"
+      src="./assets/images/alert-circle.svg"
       alt=""></button>
 
   <div id="quick-access-locations" class="hide">
@@ -49,17 +49,17 @@
     loading-screen="dotsColor: red; backgroundColor: black">
     <a-assets>
       <img id="hotspot" crossorigin="anonymous"
-        src="/assets/images/placeholder.png">
+        src="./assets/images/placeholder.png">
       <img id="radio-button" crossorigin="anonymous"
-        src="/assets/images/radio-button.png">
+        src="./assets/images/radio-button.png">
       <img id="enter-icon" crossorigin="anonymous"
-        src="/assets/images/enter-door.png">
+        src="./assets/images/enter-door.png">
       <img id="exit-icon" crossorigin="anonymous"
-        src="/assets/images/exit-door.png">
+        src="./assets/images/exit-door.png">
       <img id="map-icon" crossorigin="anonymous"
-        src="/assets/images/map.svg">
+        src="./assets/images/map.svg">
       <img id="x-icon" crossorigin="anonymous"
-        src="/assets/images/x.svg">
+        src="./assets/images/x.svg">
 
       <a-mixin id="scale-animation" scale="1 1 1"
         animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 300; easing: easeOutElastic; startEvents: mouseenter"

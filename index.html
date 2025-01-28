@@ -1,113 +1,152 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ARC Virtual Tour</title>
+    <meta name="description" content="ARC Virtual Tour" />
 
-<head>
-  <meta charset="utf-8">
-  <title>ARC Virtual Tour</title>
-  <meta name="description" content="ARC Virtual Tour">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 
-  <link rel="stylesheet" href="style.css">
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="./scripts/components/aframe-rounded-component.min.js"></script>
 
-  <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
-  <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
-  <script src="./scripts/components/aframe-rounded-component.min.js"></script>
+    <script id="display-name" type="text/html">
+      <a-rounded
+        radius="0.03"
+        color="#144616"
+        height="${height}"
+        width="${width}"
+        position="${position}"
+        rotation="${rotation}"
+      >
+        <a-text
+          value="${text}"
+          width="${width}"
+          height="height"
+          align="center"
+          color="#fff"
+          position="${width / 2} ${height / 2} 0"
+          wrap-count="${wrap_count}"
+        ></a-text>
+      </a-rounded>
+    </script>
 
-  <script id="display-name" type="text/html">
-    <a-rounded radius="0.03" color="#144616" height="${height}" width="${width}" position="${position}" rotation="${rotation}">
-      <a-text value="${text}" width="${width}" height="height" align="center" color="#fff" position="${width / 2} ${height / 2} 0"
-        wrap-count="${wrap_count}" ></a-text>
-    </a-rounded>
-  </script>
+    <script type="module" src="scripts/index.js"></script>
+  </head>
 
-  <script type="module" src="scripts/index.js"></script>
-</head>
+  <body>
+    <button id="open-qa"><img src="./assets/images/map.svg" alt="" /></button>
+    <button id="close-qa" class="hidden">
+      <img src="./assets/images/x.svg" alt="" />
+    </button>
+    <button id="open-rd" class="hide">
+      <img src="./assets/images/alert-circle.svg" alt="" />
+    </button>
 
-<body>
-  <button id="open-qa"><img src="./assets/images/map.svg" alt=""></button>
-  <button id="close-qa" class="hidden"><img src="./assets/images/x.svg" alt=""></button>
-  <button id="open-rd" class="hide"><img
-      src="./assets/images/alert-circle.svg"
-      alt=""></button>
+    <div id="quick-access-locations" class="hide"></div>
 
-  <div id="quick-access-locations" class="hide">
-  </div>
+    <div id="languages" class="">
+      <button language="en" class="lang-opt">EN</button>
+      <button language="id" class="lang-opt">ID</button>
 
-  <div id="languages" class="">
-    <button language="en" class="lang-opt">EN</button>
-    <button language="id" class="lang-opt">ID</button>
+      <button id="show-opt">EN</button>
+    </div>
 
-    <button id="show-opt">EN</button>
-  </div>
+    <a-scene
+      xr-mode-ui="enabled: false"
+      raycaster="far: 100; objects: .clickable"
+      cursor="rayOrigin: mouse"
+      renderer="antialias: true"
+      loading-screen="dotsColor: red; backgroundColor: black"
+    >
+      <a-assets>
+        <img
+          id="hotspot"
+          crossorigin="anonymous"
+          src="./assets/images/placeholder.png"
+        />
+        <img
+          id="radio-button"
+          crossorigin="anonymous"
+          src="./assets/images/radio-button.png"
+        />
+        <img
+          id="enter-icon"
+          crossorigin="anonymous"
+          src="./assets/images/enter-door.png"
+        />
+        <img
+          id="exit-icon"
+          crossorigin="anonymous"
+          src="./assets/images/exit-door.png"
+        />
+        <img
+          id="map-icon"
+          crossorigin="anonymous"
+          src="./assets/images/map.svg"
+        />
+        <img id="x-icon" crossorigin="anonymous" src="./assets/images/x.svg" />
 
-  <a-scene raycaster="far: 100; objects: .clickable" cursor="rayOrigin: mouse" renderer="antialias: true"
-    loading-screen="dotsColor: red; backgroundColor: black">
-    <a-assets>
-      <img id="hotspot" crossorigin="anonymous"
-        src="./assets/images/placeholder.png">
-      <img id="radio-button" crossorigin="anonymous"
-        src="./assets/images/radio-button.png">
-      <img id="enter-icon" crossorigin="anonymous"
-        src="./assets/images/enter-door.png">
-      <img id="exit-icon" crossorigin="anonymous"
-        src="./assets/images/exit-door.png">
-      <img id="map-icon" crossorigin="anonymous"
-        src="./assets/images/map.svg">
-      <img id="x-icon" crossorigin="anonymous"
-        src="./assets/images/x.svg">
+        <a-mixin
+          id="scale-animation"
+          scale="1 1 1"
+          animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 300; easing: easeOutElastic; startEvents: mouseenter"
+          animation__scale_reverse="property: scale; to: 1 1 1; dur: 300; easing: easeOutElastic; startEvents: mouseleave"
+        ></a-mixin>
+      </a-assets>
 
-      <a-mixin id="scale-animation" scale="1 1 1"
-        animation__scale="property: scale; to: 1.2 1.2 1.2; dur: 300; easing: easeOutElastic; startEvents: mouseenter"
-        animation__scale_reverse="property: scale; to: 1 1 1; dur: 300; easing: easeOutElastic; startEvents: mouseleave"></a-mixin>
-    </a-assets>
+      <a-entity id="camera" camera look-controls> </a-entity>
 
-    <a-entity id="camera" camera look-controls>
-    </a-entity>
+      <a-entity id="tour" tour></a-entity>
 
-    <a-entity id="tour" tour></a-entity>
+      <a-sky
+        id="mask"
+        color="#111"
+        opacity="0"
+        radius="1"
+        animation__fadeout="property:material.opacity; startEvents: fadeout; from: 0; to: 1; dur: 200"
+        animation__fadein="property:material.opacity; startEvents: fadein; from: 1; to: 0; dur: 200"
+      >
+      </a-sky>
+    </a-scene>
 
-    <a-sky id="mask" color="#111" opacity="0" radius="1"
-      animation__fadeout="property:material.opacity; startEvents: fadeout; from: 0; to: 1; dur: 200"
-      animation__fadein="property:material.opacity; startEvents: fadein; from: 1; to: 0; dur: 200">
-    </a-sky>
-  </a-scene>
+    <div id="modal" class="hide">
+      <div class="container">
+        <button class="close"><img src="assets/images/x.svg" alt="" /></button>
 
-  <div id="modal" class="hide">
-    <div class="container">
-      <button class="close"><img src="assets/images/x.svg" alt=""></button>
-
-      <div class="head">
+        <div class="head"></div>
+        <div class="body"></div>
       </div>
-      <div class="body">
+    </div>
+
+    <div class="anim-contain leaf-anim">
+      <div class="leaf-path">
+        <div class="leaf"></div>
+      </div>
+      <div class="leaf-path">
+        <div class="leaf"></div>
+      </div>
+      <div class="leaf-path">
+        <div class="leaf"></div>
+      </div>
+      <div class="leaf-path">
+        <div class="leaf"></div>
+      </div>
+      <div class="leaf-path">
+        <div class="leaf"></div>
+      </div>
+      <div class="leaf-path">
+        <div class="leaf"></div>
       </div>
     </div>
-  </div>
-
-  <div class="anim-contain leaf-anim">
-    <div class="leaf-path">
-      <div class="leaf"></div>
-    </div>
-    <div class="leaf-path">
-      <div class="leaf"></div>
-    </div>
-    <div class="leaf-path">
-      <div class="leaf"></div>
-    </div>
-    <div class="leaf-path">
-      <div class="leaf"></div>
-    </div>
-    <div class="leaf-path">
-      <div class="leaf"></div>
-    </div>
-    <div class="leaf-path">
-      <div class="leaf"></div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

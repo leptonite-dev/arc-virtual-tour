@@ -59,8 +59,21 @@ const detail = {
         },
       },
       {
-        type: "video",
-        src: "assets/videos/unit-distilasi.mp4",
+        type: "iframe",
+        attributes: [
+          [
+            "src",
+            "https://www.youtube.com/embed/J_u3L0qfXww?si=z5HZdo1NL4oQUtQx",
+          ],
+          ["title", "YouTube video player"],
+          ["frameborder", "0"],
+          [
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          ],
+          ["referrerpolicy", "strict-origin-when-cross-origin"],
+          ["allowfullscreen", "true"],
+        ],
       },
     ],
   },
@@ -85,8 +98,21 @@ const detail = {
         },
       },
       {
-        type: "video",
-        src: "assets/videos/ruangan-molekuler.mp4",
+        type: "iframe",
+        attributes: [
+          [
+            "src",
+            "https://www.youtube.com/embed/F4fm1dHKWKY?si=wtYZeRB4z9PN643y",
+          ],
+          ["title", "YouTube video player"],
+          ["frameborder", "0"],
+          [
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          ],
+          ["referrerpolicy", "strict-origin-when-cross-origin"],
+          ["allowfullscreen", "true"],
+        ],
       },
     ],
   },
@@ -111,8 +137,21 @@ const detail = {
         },
       },
       {
-        type: "video",
-        src: "assets/videos/garden.mp4",
+        type: "iframe",
+        attributes: [
+          [
+            "src",
+            "https://www.youtube.com/embed/Ea_qIQ4wUBs?si=7MFa62qb9RtDe5Db",
+          ],
+          ["title", "YouTube video player"],
+          ["frameborder", "0"],
+          [
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          ],
+          ["referrerpolicy", "strict-origin-when-cross-origin"],
+          ["allowfullscreen", "true"],
+        ],
       },
     ],
   },
@@ -137,8 +176,21 @@ const detail = {
         },
       },
       {
-        type: "video",
-        src: "assets/videos/ruang-produksi.mp4",
+        type: "iframe",
+        attributes: [
+          [
+            "src",
+            "https://www.youtube.com/embed/C0bprXKD-vM?si=_ivXN8OC4Ceg1iZf",
+          ],
+          ["title", "YouTube video player"],
+          ["frameborder", "0"],
+          [
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          ],
+          ["referrerpolicy", "strict-origin-when-cross-origin"],
+          ["allowfullscreen", "true"],
+        ],
       },
     ],
   },
@@ -170,8 +222,21 @@ const detail = {
         },
       },
       {
-        type: "video",
-        src: "assets/videos/koleksi-minyak-nilam.mp4",
+        type: "iframe",
+        attributes: [
+          [
+            "src",
+            "https://www.youtube.com/embed/B07W2nZletc?si=o-pI3439gTSHwIua",
+          ],
+          ["title", "YouTube video player"],
+          ["frameborder", "0"],
+          [
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          ],
+          ["referrerpolicy", "strict-origin-when-cross-origin"],
+          ["allowfullscreen", "true"],
+        ],
       },
     ],
   },
@@ -196,8 +261,21 @@ const detail = {
         },
       },
       {
-        type: "video",
-        src: "assets/videos/mesin-purifikasi.mp4",
+        type: "iframe",
+        attributes: [
+          [
+            "src",
+            "https://www.youtube.com/embed/1qgZ0rHCjuI?si=i7v4B0LVak5RUmIg",
+          ],
+          ["title", "YouTube video player"],
+          ["frameborder", "0"],
+          [
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+          ],
+          ["referrerpolicy", "strict-origin-when-cross-origin"],
+          ["allowfullscreen", "true"],
+        ],
       },
     ],
   },
@@ -237,11 +315,21 @@ class Modal {
     children.forEach((child) => {
       const el = document.createElement(child.type);
 
-      if (child.type === "p") {
-        el.innerText = child.text[language];
-      } else if (child.type === "video") {
-        el.src = child.src;
-        el.setAttribute("controls", "");
+      switch (child.type) {
+        case "p":
+          el.innerText = child.text[language];
+          break;
+        case "video":
+          el.src = child.src;
+          el.setAttribute("controls", "");
+          break;
+        case "iframe":
+          child.attributes.forEach(function (attribute) {
+            el.setAttribute(attribute[0], attribute[1]);
+          });
+          break;
+        default:
+          break;
       }
 
       this.bodyEl.appendChild(el);
@@ -324,10 +412,7 @@ function initQuickAccess() {
     const tourEl = document.querySelector("#tour");
     const maskEl = document.querySelector("#mask");
 
-    imgEl.setAttribute(
-      "src",
-      "./assets/images/map-pin.svg"
-    );
+    imgEl.setAttribute("src", "./assets/images/map-pin.svg");
     listItemEl.appendChild(imgEl);
 
     textEl.innerText = location.name;

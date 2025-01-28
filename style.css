@@ -15,7 +15,7 @@ button {
 /* Quick Access */
 #open-qa,
 #close-qa {
-  position: absolute;
+  position: fixed;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
@@ -132,6 +132,16 @@ button {
   height: 100%;
   overflow-y: auto;
 }
+
+#modal .container .body iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-width: 600px;
+  border-radius: 16px;
+  display: block;
+  margin: auto;
+}
+
 #modal .container .body video {
   width: 100%;
   max-width: 770px;
@@ -142,7 +152,7 @@ button {
 
 /* Languages */
 #languages {
-  position: absolute;
+  position: fixed;
   bottom: 32px;
   right: 32px;
   z-index: 1;
@@ -182,17 +192,26 @@ button {
 
 /* Room Detail */
 #open-rd {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   top: 32px;
   right: 32px;
   width: 44px;
   height: 44px;
   border: 0;
   z-index: 1;
-  background-color: white;
   border-radius: 16px;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
 }
+
+#open-rd img {
+  filter: invert(0.9);
+}
+
 #open-rd.hide {
   display: none;
 }
